@@ -47,11 +47,11 @@ function MapcrafterUI(config) {
 }
 
 MapcrafterUI.prototype.init = function() {
-	this.lmap = L.map("mcmap", {
+	this.lmap = L.map('mcmap', {
 		crs: L.CRS.Simple
 	}).setView([0, 0], 0, {animate: false});
 	this.lmap.attributionControl.addAttribution("Map rendered with <a href='http://mapcrafter.org'>Mapcrafter</a>");
-	
+
 	var firstMap = null;
 	for(var type in this.config) {
 		this.layers[type] = {};
@@ -66,7 +66,7 @@ MapcrafterUI.prototype.init = function() {
 	this.setMap(firstMap);
 	
 	this.created = true;
-	
+		
 	for(var i = 0; i < this.controlsNotCreated.length; i++) {
 		var control = this.controlsNotCreated[i];
 		this.addControl(control[0], control[1], control[2]);
